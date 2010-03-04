@@ -6,6 +6,11 @@
 #
            
 case node[:instance_role] when "app_master"
+
+  ey_cloud_report "xapian" do
+    message "installing xapian bindings"
+  end
+
   bash "install-xapian " do
     user "root"
     code 'echo "dev-libs/xapian ~x86" >> /etc/portage/package.keywords/ec2'
