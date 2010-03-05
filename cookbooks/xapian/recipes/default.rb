@@ -5,7 +5,7 @@
 # Based on a posting in EY support (https://cloud-support.engineyard.com/discussions/problems/865-xapian-bindings)
 #
            
-case node[:instance_role] when "app_master"
+case node[:instance_role] when "app_master", "solo"
 
   ey_cloud_report "xapian" do
     message "installing xapian bindings"
