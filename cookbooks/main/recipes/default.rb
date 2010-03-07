@@ -30,3 +30,6 @@ end
 
 #install xapian bindings
 require_recipe "xapian"
+
+#configure s3 for paperclip, etc.
+require_recipe "s3"
