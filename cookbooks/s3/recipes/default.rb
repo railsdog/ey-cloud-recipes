@@ -13,15 +13,12 @@ node[:applications].each do |app_name,data|
         message "configuring s3 settings"
       end
     
-      template "/data/#{app_name}/shared/config/s3.yml" do
-        source "s3.yml.erb"
-        variables({
-          :s3_key => node[:s3_access_key_id], 
-          :s3_access => node[:s3_secret_access_key]
-        })        
+      remote_file "/data/#{app_name}/shared/config/s3.yml" do
+        source "s3.yml"
         owner user[:username]
         group user[:username]
         mode 0744
+        backup false
       end     
   end
 end

@@ -28,8 +28,10 @@ end
 #uncomment to run the ssmtp recipe
 #require_recipe "ssmtp" 
 
-#install xapian bindings
-require_recipe "xapian"
-
 #configure s3 for paperclip, etc.
 require_recipe "s3"
+
+#install xapian bindings and symlink for xapiandb
+require_recipe "xapian"
+
+

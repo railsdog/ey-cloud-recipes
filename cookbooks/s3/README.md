@@ -7,5 +7,6 @@ To make use of this recipe you will also need to add a [deploy hook](https://clo
     
     run "ln -nfs #{shared_path}/config/s3.yml #{release_path}/config/s3.yml"
     
+You will also need to update the files/default/s3.yml with your S3 credentials.  You should not commit the S3 credentials to git.  Just update them and use the ey-recipes gem to deploy the recipes directly to the EY cloud.
 
 [EY Cloud]: https://cloud.engineyard.com/extras
